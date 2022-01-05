@@ -48,8 +48,6 @@ resource "aws_autoscaling_group" "bastion-asg" {
   vpc_zone_identifier = var.public_subnets
   
 
-
-
   launch_template {
     id      = aws_launch_template.bastion-launch-template.id
     version = "$Latest"
@@ -64,7 +62,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
 
 
 
-# ------ Autoscslaling group for reverse proxy nginx ---------
+# ------ Autoscaling group for reverse proxy nginx ---------
 
 resource "aws_autoscaling_group" "nginx-asg" {
   name                      = "nginx-asg"
